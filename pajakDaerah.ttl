@@ -1,0 +1,506 @@
+@prefix pem: <http://www.pemerintah.go.id/> .
+@prefix provinsi: <http://www.provinsi.go.id/> .
+@prefix apbd: <http://www.apbd.go.id/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+
+pem:provinsi a rdfs:Class .
+pem:kondJenisAPBD a rdfs:Class .
+apbd:akun a rdfs:Class .
+apbd:kelompok a rdfs:Class .
+apbd:jenis a rdfs:Class .
+
+pem:kode a rdf:Property .
+pem:kode rdfs:domain pem:provinsi .
+pem:kode rdfs:range xsd:integer .
+
+pem:lat a rdf:Property .
+pem:lat rdfs:domain pem:provinsi .
+pem:lat rdfs:range xsd:double .
+
+pem:long a rdf:Property .
+pem:long rdfs:domain pem:provinsi .
+pem:long rdfs:range xsd:double .
+
+pem:kondAlokasiDana a rdf:Property .
+pem:kondAlokasiDana rdfs:domain pem:provinsi .
+pem:kondAlokasiDana rdfs:range pem:kondJenisAPBD .
+
+pem:nilaiAnggaran a rdf:Property .
+pem:nilaiAnggaran rdfs:domain pem:kondJenisAPBD .
+pem:nilaiAnggaran rdfs:range xsd:long .
+
+pem:tahun a rdf:Property .
+pem:tahun rdfs:domain pem:kondJenisAPBD .
+pem:tahun rdfs:range xsd:integer .
+
+pem:merupakan a rdf:Property .
+pem:merupakan rdfs:domain pem:kondJenisAPBD .
+pem:merupakan rdfs:range apbd:jenis .
+
+apbd:mrpKelompok a rdf:Property .
+apbd:mrpKelompok rdfs:domain apbd:jenis .
+apbd:mrpKelompok rdfs:range apbd:kelompok .
+
+apbd:mrpAkun a rdf:Property .
+apbd:mrpAkun rdfs:domain apbd:kelompok .
+apbd:mrpAkun rdfs:range apbd:akun .
+
+provinsi:1100NAD a pem:provinsi .
+provinsi:1100NAD rdfs:label "Prov. Nanggroe Aceh Darussalam" .
+provinsi:1100NAD pem:kode "1100" .
+provinsi:1100NAD pem:lat "5.55" .
+provinsi:1100NAD pem:long "95.31667" .
+provinsi:1100NAD pem:kondAlokasiDana pem:pdNAD2014 .
+
+provinsi:1200Sumut a pem:provinsi .
+provinsi:1200Sumut rdfs:label "Prov. Sumatera Utara" .
+provinsi:1200Sumut pem:kode "1200" .
+provinsi:1200Sumut pem:lat "3.583333" .
+provinsi:1200Sumut pem:long "98.66666" .
+provinsi:1200Sumut pem:kondAlokasiDana pem:pdSumut2014 .
+
+provinsi:1300Sumbar a pem:provinsi .
+provinsi:1300Sumbar rdfs:label "Prov. Sumatera Barat" .
+provinsi:1300Sumbar pem:kode "1300" .
+provinsi:1300Sumbar pem:lat "-0.95" .
+provinsi:1300Sumbar pem:long "100.3531" .
+provinsi:1300Sumbar pem:kondAlokasiDana pem:pdSumbar2014 .
+
+provinsi:1400Riau a pem:provinsi .
+provinsi:1400Riau rdfs:label "Prov. Riau" .
+provinsi:1400Riau pem:kode "1400" .
+provinsi:1400Riau pem:lat "0.4816667" .
+provinsi:1400Riau pem:long "101.4686" .
+provinsi:1400Riau pem:kondAlokasiDana pem:pdRiau2014 .
+
+provinsi:1500Jambi a pem:provinsi .
+provinsi:1500Jambi rdfs:label "Prov. Jambi" .
+provinsi:1500Jambi pem:kode "1500" .
+provinsi:1500Jambi pem:lat "-1.589167" .
+provinsi:1500Jambi pem:long "103.61" .
+provinsi:1500Jambi pem:kondAlokasiDana pem:pdJambi2014 .
+
+provinsi:1600Sumsel a pem:provinsi .
+provinsi:1600Sumsel rdfs:label "Prov. Sumatera Selatan" .
+provinsi:1600Sumsel pem:kode "1600" .
+provinsi:1600Sumsel pem:lat "-2.990833" .
+provinsi:1600Sumsel pem:long "104.7567" .
+provinsi:1600Sumsel pem:kondAlokasiDana pem:pdSumsel2014 .
+
+provinsi:1700Bengkulu a pem:provinsi .
+provinsi:1700Bengkulu rdfs:label "Prov. Bengkulu" .
+provinsi:1700Bengkulu pem:kode "1700" .
+provinsi:1700Bengkulu pem:lat "-3.795556" .
+provinsi:1700Bengkulu pem:long "102.2592" .
+provinsi:1700Bengkulu pem:kondAlokasiDana pem:pdBengkulu2014 .
+
+provinsi:1800Lampung a pem:provinsi .
+provinsi:1800Lampung rdfs:label "Prov. Lampung" .
+provinsi:1800Lampung pem:kode "1800" .
+provinsi:1800Lampung pem:lat "-5.429722" .
+provinsi:1800Lampung pem:long "105.2625" .
+provinsi:1800Lampung pem:kondAlokasiDana pem:pdLampung2014 .
+
+provinsi:1900Bangka a pem:provinsi .
+provinsi:1900Bangka rdfs:label "Prov. Kepulauan Bangka Belitung" .
+provinsi:1900Bangka pem:kode "1900" .
+provinsi:1900Bangka pem:lat "-2.1" .
+provinsi:1900Bangka pem:long "106.1" .
+provinsi:1900Bangka pem:kondAlokasiDana pem:pdBangka2014 .
+
+provinsi:2100KepRiau a pem:provinsi .
+provinsi:2100KepRiau rdfs:label "Prov. Kepulauan Riau" .
+provinsi:2100KepRiau pem:kode "2100" .
+provinsi:2100KepRiau pem:lat "1.083333" .
+provinsi:2100KepRiau pem:long "104.4833" .
+provinsi:2100KepRiau pem:kondAlokasiDana pem:pdKepRiau2014 .
+
+provinsi:3100Jakarta a pem:provinsi .
+provinsi:3100Jakarta rdfs:label "Prov. DKI Jakarta" .
+provinsi:3100Jakarta pem:kode "3100" .
+provinsi:3100Jakarta pem:lat "-6.183333" .
+provinsi:3100Jakarta pem:long "106.8333" .
+provinsi:3100Jakarta pem:kondAlokasiDana pem:pdJakarta2014 .
+
+provinsi:3200Jabar a pem:provinsi .
+provinsi:3200Jabar rdfs:label "Prov. Jawa Barat" .
+provinsi:3200Jabar pem:kode "3200" .
+provinsi:3200Jabar pem:lat "-6.914722" .
+provinsi:3200Jabar pem:long "107.6097" .
+provinsi:3200Jabar pem:kondAlokasiDana pem:pdJabar2014 .
+
+provinsi:3300Jateng a pem:provinsi .
+provinsi:3300Jateng rdfs:label "Prov. Jawa Tengah" .
+provinsi:3300Jateng pem:kode "3300" .
+provinsi:3300Jateng pem:lat "-6.966667" .
+provinsi:3300Jateng pem:long "110.4167" .
+provinsi:3300Jateng pem:kondAlokasiDana pem:pdJateng2014 .
+
+provinsi:3400Yogya a pem:provinsi .
+provinsi:3400Yogya rdfs:label "Prov. D I Yogyakarta" .
+provinsi:3400Yogya pem:kode "3400" .
+provinsi:3400Yogya pem:lat "-7.801389" .
+provinsi:3400Yogya pem:long "110.3644" .
+provinsi:3400Yogya pem:kondAlokasiDana pem:pdYogya2014 .
+
+provinsi:3500Jatim a pem:provinsi .
+provinsi:3500Jatim rdfs:label "Prov. Jawa Timur" .
+provinsi:3500Jatim pem:kode "3500" .
+provinsi:3500Jatim pem:lat "-7.266667" .
+provinsi:3500Jatim pem:long "112.7167" .
+provinsi:3500Jatim pem:kondAlokasiDana pem:pdJatim2014 .
+
+provinsi:3600Banten a pem:provinsi .
+provinsi:3600Banten rdfs:label "Prov. Banten" .
+provinsi:3600Banten pem:kode "3600" .
+provinsi:3600Banten pem:lat "-6.12" .
+provinsi:3600Banten pem:long "106.1503" .
+provinsi:3600Banten pem:kondAlokasiDana pem:pdBanten2014 .
+
+provinsi:5100Bali a pem:provinsi .
+provinsi:5100Bali rdfs:label "Prov. Bali" .
+provinsi:5100Bali pem:kode "5100" .
+provinsi:5100Bali pem:lat "-8.65" .
+provinsi:5100Bali pem:long "115.2167" .
+provinsi:5100Bali pem:kondAlokasiDana pem:pdBali2014 .
+
+provinsi:5200NTB a pem:provinsi .
+provinsi:5200NTB rdfs:label "Prov. Nusa Tenggara Barat" .
+provinsi:5200NTB pem:kode "5200" .
+provinsi:5200NTB pem:lat "-8.583333" .
+provinsi:5200NTB pem:long "116.1167" .
+provinsi:5200NTB pem:kondAlokasiDana pem:pdNTB2014 .
+
+provinsi:5300NTT a pem:provinsi .
+provinsi:5300NTT rdfs:label "Prov. Nusa Tenggara Timur" .
+provinsi:5300NTT pem:kode "5300" .
+provinsi:5300NTT pem:lat "-10.18333" .
+provinsi:5300NTT pem:long "123.5833" .
+provinsi:5300NTT pem:kondAlokasiDana pem:pdNTT2014 .
+
+provinsi:6100Kalbar a pem:provinsi .
+provinsi:6100Kalbar rdfs:label "Prov. Kalimantan Barat" .
+provinsi:6100Kalbar pem:kode "6100" .
+provinsi:6100Kalbar pem:lat "-0.0166667" .
+provinsi:6100Kalbar pem:long "109.3333" .
+provinsi:6100Kalbar pem:kondAlokasiDana pem:pdKalbar2014 .
+
+provinsi:6200Kalteng a pem:provinsi .
+provinsi:6200Kalteng rdfs:label "Prov. Kalimantan Tengah" .
+provinsi:6200Kalteng pem:kode "6200" .
+provinsi:6200Kalteng pem:lat "-2.21" .
+provinsi:6200Kalteng pem:long "113.92" .
+provinsi:6200Kalteng pem:kondAlokasiDana pem:pdKalteng2014 .
+
+provinsi:6300Kalsel a pem:provinsi .
+provinsi:6300Kalsel rdfs:label "Prov. Kalimantan Selatan" .
+provinsi:6300Kalsel pem:kode "6300" .
+provinsi:6300Kalsel pem:lat "-3.314444" .
+provinsi:6300Kalsel pem:long "114.5925" .
+provinsi:6300Kalsel pem:kondAlokasiDana pem:pdKalsel2014 .
+
+provinsi:6400Kaltim a pem:provinsi .
+provinsi:6400Kaltim rdfs:label "Prov. Kalimantan Timur" .
+provinsi:6400Kaltim pem:kode "6400" .
+provinsi:6400Kaltim pem:lat "-0.5022222" .
+provinsi:6400Kaltim pem:long "117.1536" .
+provinsi:6400Kaltim pem:kondAlokasiDana pem:pdKaltim2014 .
+
+provinsi:7100Sulut a pem:provinsi .
+provinsi:7100Sulut rdfs:label "Prov. Sulawesi Utara" .
+provinsi:7100Sulut pem:kode "7100" .
+provinsi:7100Sulut pem:lat "1.493056" .
+provinsi:7100Sulut pem:long "124.8414" .
+provinsi:7100Sulut pem:kondAlokasiDana pem:pdSulut2014 .
+
+provinsi:7200Sultenga a pem:provinsi .
+provinsi:7200Sultenga rdfs:label "Prov. Sulawesi Tengah" .
+provinsi:7200Sultenga pem:kode "7200" .
+provinsi:7200Sultenga pem:lat "-0.9" .
+provinsi:7200Sultenga pem:long "119.8333" .
+provinsi:7200Sultenga pem:kondAlokasiDana pem:pdSulteng2014 .
+
+provinsi:7300Sulsel a pem:provinsi .
+provinsi:7300Sulsel rdfs:label "Prov. Sulawesi Selatan" .
+provinsi:7300Sulsel pem:kode "7300" .
+provinsi:7300Sulsel pem:lat "-5.133333" .
+provinsi:7300Sulsel pem:long "119.4167" .
+provinsi:7300Sulsel pem:kondAlokasiDana pem:pdSulsel2014 .
+
+provinsi:7400Sulteng a pem:provinsi .
+provinsi:7400Sulteng rdfs:label "Prov. Sulawesi Tenggara" .
+provinsi:7400Sulteng pem:kode "7400" .
+provinsi:7400Sulteng pem:lat "-3.9675" .
+provinsi:7400Sulteng pem:long "122.5947" .
+provinsi:7400Sulteng pem:kondAlokasiDana pem:pdSulteng2014 .
+
+provinsi:7500Gorontalo a pem:provinsi .
+provinsi:7500Gorontalo rdfs:label "Prov. Gorontalo" .
+provinsi:7500Gorontalo pem:kode "7500" .
+provinsi:7500Gorontalo pem:lat "0.5333334" .
+provinsi:7500Gorontalo pem:long "123.0667" .
+provinsi:7500Gorontalo pem:kondAlokasiDana pem:pdGorontalo2014 .
+
+provinsi:7600Sulbar a pem:provinsi .
+provinsi:7600Sulbar rdfs:label "Prov. Sulawesi Barat" .
+provinsi:7600Sulbar pem:kode "7600" .
+provinsi:7600Sulbar pem:lat "-2.668611" .
+provinsi:7600Sulbar pem:long "118.8622" .
+provinsi:7600Sulbar pem:kondAlokasiDana pem:pdSulbar2014 .
+
+provinsi:8100Maluku a pem:provinsi .
+provinsi:8100Maluku rdfs:label "Prov. Maluku" .
+provinsi:8100Maluku pem:kode "8100" .
+provinsi:8100Maluku pem:lat "-3.7" .
+provinsi:8100Maluku pem:long "128.1667" .
+provinsi:8100Maluku pem:kondAlokasiDana pem:pdMaluku2014 .
+
+provinsi:8200Malut a pem:provinsi .
+provinsi:8200Malut rdfs:label "Prov. Maluku Utara" .
+provinsi:8200Malut pem:kode "8200" .
+provinsi:8200Malut pem:lat "0.7833334" .
+provinsi:8200Malut pem:long "127.3667" .
+provinsi:8200Malut pem:kondAlokasiDana pem:pdMalut2014 .
+
+provinsi:9100Papbar a pem:provinsi .
+provinsi:9100Papbar rdfs:label "Prov. Papua Barat" .
+provinsi:9100Papbar pem:kode "9100" .
+provinsi:9100Papbar pem:lat "-0.8666667" .
+provinsi:9100Papbar pem:long "134.0833" .
+provinsi:9100Papbar pem:kondAlokasiDana pem:pdPapbar2014 .
+
+provinsi:9400Papua a pem:provinsi .
+provinsi:9400Papua rdfs:label "Prov. Papua" .
+provinsi:9400Papua pem:kode "9400" .
+provinsi:9400Papua pem:lat "-2.533056" .
+provinsi:9400Papua pem:long "140.7169" .
+provinsi:9400Papua pem:kondAlokasiDana pem:pdPapua2014 .
+
+provinsi:6500Kaltara a pem:provinsi .
+provinsi:6500Kaltara rdfs:label "Prov. Kalimantan Utara" .
+provinsi:6500Kaltara pem:kode "6500" .
+provinsi:6500Kaltara pem:lat "3.5892" .
+provinsi:6500Kaltara pem:long "116.6223" .
+provinsi:6500Kaltara pem:kondAlokasiDana pem:pdKaltara2014 .
+
+
+pem:pdNAD2014 a pem:kondJenisAPBD .
+pem:pdNAD2014 pem:tahun "2014" .
+pem:pdNAD2014 pem:nilaiAnggaran "910000000000" .
+pem:pdNAD2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSumut2014 a pem:kondJenisAPBD .
+pem:pdSumut2014 pem:tahun "2014" .
+pem:pdSumut2014 pem:nilaiAnggaran "4530000000000" .
+pem:pdSumut2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSumbar2014 a pem:kondJenisAPBD .
+pem:pdSumbar2014 pem:tahun "2014" .
+pem:pdSumbar2014 pem:nilaiAnggaran "1260000000000" .
+pem:pdSumbar2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdRiau2014 a pem:kondJenisAPBD .
+pem:pdRiau2014 pem:tahun "2014" .
+pem:pdRiau2014 pem:nilaiAnggaran "2320000000000" .
+pem:pdRiau2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdJambi2014 a pem:kondJenisAPBD .
+pem:pdJambi2014 pem:tahun "2014" .
+pem:pdJambi2014 pem:nilaiAnggaran "808000000000" .
+pem:pdJambi2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSumsel2014 a pem:kondJenisAPBD .
+pem:pdSumsel2014 pem:tahun "2014" .
+pem:pdSumsel2014 pem:nilaiAnggaran "2280000000000" .
+pem:pdSumsel2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdBengkulu2014 a pem:kondJenisAPBD .
+pem:pdBengkulu2014 pem:tahun "2014" .
+pem:pdBengkulu2014 pem:nilaiAnggaran "401000000000" .
+pem:pdBengkulu2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdLampung2014 a pem:kondJenisAPBD .
+pem:pdLampung2014 pem:tahun "2014" .
+pem:pdLampung2014 pem:nilaiAnggaran "1790000000000" .
+pem:pdLampung2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdBangka2014 a pem:kondJenisAPBD .
+pem:pdBangka2014 pem:tahun "2014" .
+pem:pdBangka2014 pem:nilaiAnggaran "446000000000" .
+pem:pdBangka2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdKepRiau2014 a pem:kondJenisAPBD .
+pem:pdKepRiau2014 pem:tahun "2014" .
+pem:pdKepRiau2014 pem:nilaiAnggaran "838000000000" .
+pem:pdKepRiau2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdJakarta2014 a pem:kondJenisAPBD .
+pem:pdJakarta2014 pem:tahun "2014" .
+pem:pdJakarta2014 pem:nilaiAnggaran "32500000000000" .
+pem:pdJakarta2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdJabar2014 a pem:kondJenisAPBD .
+pem:pdJabar2014 pem:tahun "2014" .
+pem:pdJabar2014 pem:nilaiAnggaran "12200000000000" .
+pem:pdJabar2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdJateng2014 a pem:kondJenisAPBD .
+pem:pdJateng2014 pem:tahun "2014" .
+pem:pdJateng2014 pem:nilaiAnggaran "7100000000000" .
+pem:pdJateng2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdYogya2014 a pem:kondJenisAPBD .
+pem:pdYogya2014 pem:tahun "2014" .
+pem:pdYogya2014 pem:nilaiAnggaran "1100000000000" .
+pem:pdYogya2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdJatim2014 a pem:kondJenisAPBD .
+pem:pdJatim2014 pem:tahun "2014" .
+pem:pdJatim2014 pem:nilaiAnggaran "9290000000000" .
+pem:pdJatim2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdBanten2014 a pem:kondJenisAPBD .
+pem:pdBanten2014 pem:tahun "2014" .
+pem:pdBanten2014 pem:nilaiAnggaran "4470000000000" .
+pem:pdBanten2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdBali2014 a pem:kondJenisAPBD .
+pem:pdBali2014 pem:tahun "2014" .
+pem:pdBali2014 pem:nilaiAnggaran "2100000000000" .
+pem:pdBali2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdNTB2014 a pem:kondJenisAPBD .
+pem:pdNTB2014 pem:tahun "2014" .
+pem:pdNTB2014 pem:nilaiAnggaran "928000000000" .
+pem:pdNTB2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdNTT2014 a pem:kondJenisAPBD .
+pem:pdNTT2014 pem:tahun "2014" .
+pem:pdNTT2014 pem:nilaiAnggaran "528000000000" .
+pem:pdNTT2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdKalbar2014 a pem:kondJenisAPBD .
+pem:pdKalbar2014 pem:tahun "2014" .
+pem:pdKalbar2014 pem:nilaiAnggaran "1430000000000" .
+pem:pdKalbar2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdKalteng2014 a pem:kondJenisAPBD .
+pem:pdKalteng2014 pem:tahun "2014" .
+pem:pdKalteng2014 pem:nilaiAnggaran "1120000000000" .
+pem:pdKalteng2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdKalsel2014 a pem:kondJenisAPBD .
+pem:pdKalsel2014 pem:tahun "2014" .
+pem:pdKalsel2014 pem:nilaiAnggaran "2650000000000" .
+pem:pdKalsel2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdKaltim2014 a pem:kondJenisAPBD .
+pem:pdKaltim2014 pem:tahun "2014" .
+pem:pdKaltim2014 pem:nilaiAnggaran "4650000000000" .
+pem:pdKaltim2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSulut2014 a pem:kondJenisAPBD .
+pem:pdSulut2014 pem:tahun "2014" .
+pem:pdSulut2014 pem:nilaiAnggaran "821000000000" .
+pem:pdSulut2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSultenga2014 a pem:kondJenisAPBD .
+pem:pdSultenga2014 pem:tahun "2014" .
+pem:pdSultenga2014 pem:nilaiAnggaran "685000000000" .
+pem:pdSultenga2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSulsel2014 a pem:kondJenisAPBD .
+pem:pdSulsel2014 pem:tahun "2014" .
+pem:pdSulsel2014 pem:nilaiAnggaran "2820000000000" .
+pem:pdSulsel2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSulteng2014 a pem:kondJenisAPBD .
+pem:pdSulteng2014 pem:tahun "2014" .
+pem:pdSulteng2014 pem:nilaiAnggaran "425000000000" .
+pem:pdSulteng2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdGorontalo2014 a pem:kondJenisAPBD .
+pem:pdGorontalo2014 pem:tahun "2014" .
+pem:pdGorontalo2014 pem:nilaiAnggaran "258000000000" .
+pem:pdGorontalo2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdSulbar2014 a pem:kondJenisAPBD .
+pem:pdSulbar2014 pem:tahun "2014" .
+pem:pdSulbar2014 pem:nilaiAnggaran "176000000000" .
+pem:pdSulbar2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdMaluku2014 a pem:kondJenisAPBD .
+pem:pdMaluku2014 pem:tahun "2014" .
+pem:pdMaluku2014 pem:nilaiAnggaran "322000000000" .
+pem:pdMaluku2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdMalut2014 a pem:kondJenisAPBD .
+pem:pdMalut2014 pem:tahun "2014" .
+pem:pdMalut2014 pem:nilaiAnggaran "152000000000" .
+pem:pdMalut2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdPapbar2014 a pem:kondJenisAPBD .
+pem:pdPapbar2014 pem:tahun "2014" .
+pem:pdPapbar2014 pem:nilaiAnggaran "166000000000" .
+pem:pdPapbar2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdPapua2014 a pem:kondJenisAPBD .
+pem:pdPapua2014 pem:tahun "2014" .
+pem:pdPapua2014 pem:nilaiAnggaran "597000000000" .
+pem:pdPapua2014 pem:merupakan apbd:pajakDaerah .
+
+pem:pdKaltara2014 a pem:kondJenisAPBD .
+pem:pdKaltara2014 pem:tahun "2014" .
+pem:pdKaltara2014 pem:nilaiAnggaran "617000000000" .
+pem:pdKaltara2014 pem:merupakan apbd:pajakDaerah .
+
+apbd:pajakDaerah a apbd:jenis .
+apbd:pajakDaerah rdfs:label "Pajak Daerah" .
+apbd:pajakDaerah apbd:mrpKelompok apbd:pdptAsliDaerah .
+
+apbd:pdptAsliDaerah a apbd:kelompok .
+apbd:pdptAsliDaerah rdfs:label "Pendapatan Asli Daerah" .
+apbd:pdptAsliDaerah apbd:mrpAkun apbd:pendapatan .
+
+apbd:pendapatan a apbd:akun .
+apbd:pendapatan rdfs:label "Pendapatan" .
+
+provinsi:1100NAD owl:sameAs dbr:Aceh .
+provinsi:1200Sumut owl:sameAs dbr:North_Sumatra .
+provinsi:1300Sumbar owl:sameAs dbr:West_Sumatra .
+provinsi:1400Riau owl:sameAs dbr:Riau .
+provinsi:1500Jambi owl:sameAs dbr:Jambi .
+provinsi:1600Sumsel owl:sameAs dbr:South_Sumatra .
+provinsi:1700Bengkulu owl:sameAs dbr:Bengkulu .
+provinsi:1800Lampung owl:sameAs dbr:Lampung .
+provinsi:1900Bangka owl:sameAs dbr:Bangka-Belitung_Islands .
+provinsi:2100KepRiau owl:sameAs dbr:Riau_Islands .
+provinsi:3100Jakarta owl:sameAs dbr:Jakarta .
+provinsi:3200Jabar owl:sameAs dbr:West_Java .
+provinsi:3300Jateng owl:sameAs dbr:Central_Java .
+provinsi:3400Yogya owl:sameAs dbr:Special_Region_of_Yogyakarta .
+provinsi:3500Jatim owl:sameAs dbr:East_Java .
+provinsi:3600Banten owl:sameAs dbr:Banten .
+provinsi:5100Bali owl:sameAs dbr:Bali .
+provinsi:5200NTB owl:sameAs dbr:West_Nusa_Tenggara .
+provinsi:5300NTT owl:sameAs dbr:East_Nusa_Tenggara .
+provinsi:6100Kalbar owl:sameAs dbr:West_Kalimantan .
+provinsi:6200Kalteng owl:sameAs dbr:Central_Kalimantan .
+provinsi:6300Kalsel owl:sameAs dbr:South_Kalimantan .
+provinsi:6400Kaltim owl:sameAs dbr:East_Kalimantan .
+provinsi:6500Kaltara owl:sameAs dbr:North_Kalimantan .
+provinsi:7100Sulut owl:sameAs dbr:North_Sulawesi .
+provinsi:7200Sultenga owl:sameAs dbr:Central_Sulawesi .
+provinsi:7300Sulsel owl:sameAs dbr:South_Sulawesi .
+provinsi:7400Sulteng owl:sameAs dbr:Southeast_Sulawesi .
+provinsi:7500Gorontalo owl:sameAs dbr:Gorontalo .
+provinsi:7600Sulbar owl:sameAs dbr:West_Sulawesi .
+provinsi:8100Maluku owl:sameAs <http://dbpedia.org/resource/Maluku_(province)> .
+provinsi:8200Malut owl:sameAs dbr:North_Maluku .
+provinsi:9100Papbar owl:sameAs <http://dbpedia.org/resource/West_Papua_(province)> .
+provinsi:9400Papua owl:sameAs <http://dbpedia.org/resource/Papua_(province)> .
